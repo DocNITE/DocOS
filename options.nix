@@ -49,8 +49,8 @@ in {
   # Nvidia Hybrid Devices
   # ONLY NEEDED FOR HYBRID
   # SYSTEMS! 
-  intel-bus-id = "PCI:0:2:0";
-  nvidia-bus-id = "PCI:14:0:0";
+  intel-bus-id = "PCI:1:0:0";
+  nvidia-bus-id = "PCI:0:2:0";
 
   # Enable / Setup NFS
   nfs = false;
@@ -69,6 +69,7 @@ in {
   flatpak = true;
   kdenlive = true;
   blender = true;
+  enableZeroAD = true;
 
   # Enable Support For
   # Logitech Devices
