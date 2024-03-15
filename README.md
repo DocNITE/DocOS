@@ -3,6 +3,7 @@
 ## ZaneyOS 🟰 Best ❄️ NixOS Configs
 
 ZaneyOS is a simple way of reproducing my configuration on any NixOS system. This includes the wallpaper, scripts, applications, config files, and more.
+(Also, dont forget if you clone repo, rename project folder from 'doc-os' to 'zaneyos')
 
 <img align="center" width="80%" src="https://gitlab.com/Zaney/zaneyos/-/raw/main/config/home/files/media/demo.jpg" />
 

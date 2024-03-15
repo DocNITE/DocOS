@@ -42,7 +42,7 @@ in {
     mutableUsers = true;
     users."${username}" = {
       homeMode = "755";
-      hashedPassword = "$6$YdPBODxytqUWXCYL$AHW1U9C6Qqkf6PZJI54jxFcPVm2sm/XWq3Z1qa94PFYz0FF.za9gl5WZL/z/g4nFLQ94SSEzMg5GMzMjJ6Vd7.";
+      hashedPassword = "$6$9bLxVl/NU7ZoTgqp$yukWGxhwMLWCMVa7KM3V9xayDJvtctow6Lpu4patVlJuaMa9H6qacYAYw7Rnx4I4/IWikU8.3WbjGY77fFSME.";
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = [ "networkmanager" "wheel" "libvirtd" ];

@@ -4,23 +4,23 @@
 
 let
   # THINGS YOU NEED TO CHANGE
-  username = "zaney";
-  hostname = "hyprnix";
+  username = "docnight";
+  hostname = "nixos";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/zaneyos";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
 in {
   # User Variables
-  username = "zaney";
-  hostname = "hyprnix";
-  gitUsername = "Tyler Kelley";
-  gitEmail = "tylerzanekelley@gmail.com";
+  username = "docnight";
+  hostname = "nixos";
+  gitUsername = "DocNITE";
+  gitEmail = "docnight0530@gmail.com";
   theme = "atelier-cave";
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
   borderAnim = true;
-  browser = "firefox";
+  browser = "brave";
   wallpaperGit = "https://gitlab.com/Zaney/my-wallpapers.git"; # This will give you my wallpapers
   # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
@@ -31,19 +31,19 @@ in {
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
-  clock24h = false;
+  clock24h = true;
   theLocale = "en_US.UTF-8";
   theKBDLayout = "us";
-  theSecondKBDLayout = "de";
+  theSecondKBDLayout = "ru";
   theKBDVariant = "";
-  theLCVariables = "en_US.UTF-8";
-  theTimezone = "America/Chicago";
+  theLCVariables = "ru_RU.UTF-8";
+  theTimezone = "Europe/Moscow";
   theShell = "bash"; # Possible options: bash, zsh
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "x11"; # Either x11 or wayland ONLY. Games might require x11 set here
   # For Hybrid Systems intel-nvidia
   # Should Be Used As gpuType
-  cpuType = "intel";
+  cpuType = "amd";
   gpuType = "amd";
 
   # Nvidia Hybrid Devices
@@ -66,10 +66,10 @@ in {
 
   # Enable Flatpak & Larger Programs
   distrobox = false;
-  flatpak = false;
+  flatpak = true;
   kdenlive = true;
   blender = true;
-  enableZeroAD = true;
+  enableZeroAD = false;
 
   # Enable Support For
   # Logitech Devices
@@ -82,7 +82,7 @@ in {
   kitty = true;
 
   # Enable Python & PyCharm
-  python = false;
+  python = true;
   
   # Enable SyncThing
   syncthing = false;
