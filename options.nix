@@ -69,7 +69,7 @@ in {
   flatpak = true;
   kdenlive = true;
   blender = true;
-  enableZeroAD = true;
+  enableZeroAD = false;
 
   # Enable Support For
   # Logitech Devices
