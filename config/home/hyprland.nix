@@ -20,7 +20,8 @@ in with lib; {
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=,preferred,auto,1
+      monitor=DP-1,preferred,auto,1.600000
+      monitor=DP-2,preferred,auto,1
       windowrule = fullscreen, ^(wlogout)$
       windowrule = animation fade,^(wlogout)$
       general {
@@ -36,7 +37,6 @@ in with lib; {
       input {
         kb_layout = ${theKBDLayout}, ${theSecondKBDLayout}
 	kb_options = grp:alt_shift_toggle
-        kb_options=caps:super
         follow_mouse = 1
         touchpad {
           natural_scroll = false
@@ -46,6 +46,7 @@ in with lib; {
       }
       env = NIXOS_OZONE_WL, 1
       env = NIXPKGS_ALLOW_UNFREE, 1
+      env = NIXPKGS_ALLOW_INSECURE, 1
       env = XDG_CURRENT_DESKTOP, Hyprland
       env = XDG_SESSION_TYPE, wayland
       env = XDG_SESSION_DESKTOP, Hyprland
@@ -190,6 +191,7 @@ in with lib; {
       bind = ${modifier},mouse_up,workspace, e-1
       bindm = ${modifier},mouse:272,movewindow
       bindm = ${modifier},mouse:273,resizewindow
+      # bind = ALT,SHIFT,exec,hyprctl switchxkblayout at-translated-set-2-keyboard next
       bind = ALT,Tab,cyclenext
       bind = ALT,Tab,bringactivetotop
       bind = ,XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
