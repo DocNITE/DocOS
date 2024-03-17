@@ -13,6 +13,7 @@ in {
     bottom vscode
     dotnet-sdk_8 cmake
     qemu wineWowPackages.stable winetricks
+    whatsapp-for-linux telegram-desktop
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })

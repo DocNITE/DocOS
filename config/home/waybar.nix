@@ -15,7 +15,7 @@ in with lib; {
 
       modules-center = [ "hyprland/workspaces" ] ;
       modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" "cpu" "memory"];
-      modules-right = [ "custom/hyprbindings" "custom/exit" "idle_inhibitor" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -98,7 +98,7 @@ in with lib; {
       };
       "custom/hyprbindings" = {
         tooltip = false;
-        format = " Bindings";
+        format = " ";
         on-click = "sleep 0.1 && list-hypr-bindings";
       };
       "idle_inhibitor" = {
@@ -441,19 +441,19 @@ in with lib; {
     	color: #${palette.base0E};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
-	  border-radius: 15px 50px 15px 50px;
-	  margin: 5px;
-	  padding: 2px 20px;
+	  border-radius: 0px;
+	  margin: 5px 0px;
+	  padding: 2px 7px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px;
-	  padding: 0px 10px;
-	  border-radius: 15px;
+	  margin: 6px 0px;
+	  padding: 0px 7px;
+	  border-radius: 0px;
 	'' else ''
 	  background: #${palette.base01};
-	  margin: 4px;
-	  padding: 2px 10px;
-	  border-radius: 10px;
+	  margin: 4px 0px;
+	  padding: 2px 7px;
+	  border-radius: 0px;
 	''}
       }
       #tray {
