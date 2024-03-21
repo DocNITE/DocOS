@@ -10,7 +10,7 @@ in {
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
-    bottom vscode krita libreoffice-qt
+    bottom vscode
     dotnet-sdk_8 cmake clang
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop

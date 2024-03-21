@@ -11,10 +11,10 @@ in with lib; {
     package = pkgs.waybar;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
 
       modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" "cpu" "memory"];
+      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
       modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
 
       "hyprland/workspaces" = {
@@ -37,6 +37,11 @@ in with lib; {
       	max-length = 25;
         separate-outputs = false;
         rewrite = { "" = "~"; };
+      };
+      "temperature" = {
+	critical-threshold = 80;
+	format-critical = " {temperatureC}°C";
+	format = " {temperatureC}°C";
       };
       "memory" = {
       	interval = 5;
@@ -363,6 +368,25 @@ in with lib; {
       }
       #cpu {
     	color: #${palette.base07};
+	${if slickbar == true then ''
+	  background: #${palette.base00};
+	  border-radius: 50px 15px 50px 15px;
+	  margin: 5px;
+	  padding: 2px 20px;
+	'' else if simplebar == true then ''
+	  background: #${palette.base00};
+	  margin: 6px 4px;
+	  padding: 0px 10px;
+	  border-radius: 15px;
+	'' else ''
+	  background: #${palette.base01};
+	  margin: 4px;
+	  padding: 2px 10px;
+	  border-radius: 10px;
+	''}
+      }
+      #temperature {
+    	color: #${palette.base09};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
 	  border-radius: 50px 15px 50px 15px;
