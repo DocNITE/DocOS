@@ -97,7 +97,7 @@ in with lib; {
       };
       "custom/startmenu" = {
         tooltip = false;
-        format = " ";
+        format = " ";
         # exec = "rofi -show drun";
         on-click = "sleep 0.1 && rofi-launcher";
       };
@@ -557,7 +557,7 @@ in with lib; {
 	''}
       }
       #custom-startmenu {
-    	color: #${palette.base03};
+    	color: #${palette.base07};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
 	  border-radius: 0px 15px 50px 0px;

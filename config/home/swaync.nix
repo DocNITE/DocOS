@@ -7,7 +7,7 @@ in {
     {
         "$schema": "/etc/xdg/swaync/configSchema.json",
         "positionX": "right",
-        "positionY": "top",
+        "positionY": "bottom",
         "control-center-margin-top": 10,
         "control-center-margin-bottom": 10,
         "control-center-margin-right": 10,
@@ -20,7 +20,7 @@ in {
         "timeout-critical": 0,
         "fit-to-screen": false,
         "control-center-width": 500,
-        "control-center-height": 1025,
+        "control-center-height": 700,
         "notification-window-width": 500,
         "keyboard-shortcuts": true,
         "image-visibility": "when-available",
@@ -30,7 +30,6 @@ in {
         "script-fail-notify": true,
         "widgets": [
             "title",
-            "buttons-grid",
             "mpris",
             "volume",
             "backlight",
@@ -110,8 +109,8 @@ in {
 
   home.file.".config/swaync/style.css".text = ''
     * {
-        font-family: Ubuntu;
-        font-weight: bolder;
+	font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
+    	font-weight: bold;
     }
 
     .control-center .notification-row:focus,
@@ -261,7 +260,7 @@ in {
     .control-center {
         background: #${palette.base00};
         border: 2px solid #${palette.base0C};
-        border-radius: 5px;
+        border-radius: 15px;
     }
 
     .control-center-list {
