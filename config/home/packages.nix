@@ -10,7 +10,7 @@ in {
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
-    bottom vscode krita libreoffice-qt
+    bottom vscode krita libreoffice-qt 
     dotnet-sdk_8 cmake clang
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop
@@ -26,6 +26,7 @@ in {
     (import ./../scripts/nvidia-offload.nix { inherit pkgs; })
     (import ./../scripts/web-search.nix { inherit pkgs; })
     (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
+    #(import ./../scripts/screen-man.nix { inherit pkgs; })
     (import ./../scripts/screenshootin.nix { inherit pkgs; })
     (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];

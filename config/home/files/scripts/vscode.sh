@@ -1,0 +1,1 @@
+code --ozone-platform-hint=wayland --disable-gpu

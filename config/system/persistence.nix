@@ -23,6 +23,7 @@ in
 	"Documents"
 	"Pictures"
         "Videos"
+        "Scripts"
         "zaneyos"
 	".local/share/sddm"
 	".mozilla"
