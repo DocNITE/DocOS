@@ -11,11 +11,15 @@ in with lib; {
     package = pkgs.waybar;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-center = [
+                        "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"
+                        "hyprland/workspaces" 
+                        "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" 
+                      ] ;
+      modules-left = [ ];
+      modules-right = [ ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -178,10 +182,9 @@ in with lib; {
 	  font-style: normal;
 	  color: #${palette.base00};
 	'' else if simplebar == true then ''
-	  color: #${palette.base00};
-          background: transparent;   
+          background: #${palette.base00};
 	  margin: 4px;
-	  border-radius: 0px;
+	  border-radius: 15px;
 	  border: 0px;
 	  font-style: normal;
 	'' else ''
@@ -207,8 +210,6 @@ in with lib; {
 	'' else if simplebar == true then ''
 	  color: #${palette.base03};
           background: #${palette.base00};   
-	  margin: 4px 3px;
-	  opacity: 1;
 	  border: 0px;
 	  border-radius: 15px;
 	  transition: ${betterTransition};
@@ -242,8 +243,6 @@ in with lib; {
           background-size: 300% 300%;
           animation: swiping 15s linear infinite;
 	  border-radius: 15px;
-	  margin: 4px 3px;
-	  opacity: 1.0;
 	  border: 0px;
 	  min-width: 45px;
 	  transition: ${betterTransition};

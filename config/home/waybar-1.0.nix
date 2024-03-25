@@ -11,7 +11,7 @@ in with lib; {
     package = pkgs.waybar;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
 
       modules-center = [ "hyprland/workspaces" ] ;
       modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];

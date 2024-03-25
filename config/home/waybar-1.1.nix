@@ -11,11 +11,15 @@ in with lib; {
     package = pkgs.waybar;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "bottom";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-center = [
+                        "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"
+                        "hyprland/workspaces" 
+                        "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" 
+                      ] ;
+      modules-left = [ ];
+      modules-right = [ ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";

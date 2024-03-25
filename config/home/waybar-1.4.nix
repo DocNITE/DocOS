@@ -13,9 +13,9 @@ in with lib; {
       layer = "top";
       position = "top";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-center = [ "hyprland/workspaces" ];
+      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory" ];
+      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock" "tray" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -153,12 +153,13 @@ in with lib; {
       * {
 	font-size: 16px;
 	font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
-    	font-weight: bold;
+        font-weight: bold;
+        margin: 0px 0px;
       }
       window#waybar {
 	${if slickbar == true || simplebar == true then ''
-	  background-color: rgba(26,27,38,0);
-	  border-bottom: 1px solid rgba(26,27,38,0);
+	  background-color: rgba(26,27,38,0.6);
+          border-bottom: 1px solid rgba(26,27,38,0);
 	  border-radius: 0px;
 	  color: #${palette.base0F};
 	'' else ''
@@ -173,15 +174,11 @@ in with lib; {
 	  background: #${palette.base00};
 	  margin: 5px;
 	  padding: 0px 1px;
-	  border-radius: 15px;
+	  border-radius: 0px;
 	  border: 0px;
 	  font-style: normal;
 	  color: #${palette.base00};
 	'' else if simplebar == true then ''
-	  color: #${palette.base00};
-          background: transparent;   
-	  margin: 4px;
-	  border-radius: 0px;
 	  border: 0px;
 	  font-style: normal;
 	'' else ''
@@ -206,9 +203,6 @@ in with lib; {
 	  transition: ${betterTransition};
 	'' else if simplebar == true then ''
 	  color: #${palette.base03};
-          background: #${palette.base00};   
-	  margin: 4px 3px;
-	  opacity: 1;
 	  border: 0px;
 	  border-radius: 15px;
 	  transition: ${betterTransition};
@@ -242,8 +236,6 @@ in with lib; {
           background-size: 300% 300%;
           animation: swiping 15s linear infinite;
 	  border-radius: 15px;
-	  margin: 4px 3px;
-	  opacity: 1.0;
 	  border: 0px;
 	  min-width: 45px;
 	  transition: ${betterTransition};
@@ -319,9 +311,6 @@ in with lib; {
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  color: #${palette.base03};
-	  background: #${palette.base00};
-	  margin: 6px 4px;
-	  border-radius: 15px;
 	  padding: 0px 10px;
 	'' else ''
 	  margin: 4px;
@@ -339,10 +328,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -358,10 +344,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -377,10 +360,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -396,10 +376,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -415,10 +392,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -434,10 +408,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -453,8 +424,6 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
 	  border-radius: 15px;
 	'' else ''
@@ -472,10 +441,7 @@ in with lib; {
 	  margin: 5px 0px;
 	  padding: 2px 7px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 0px;
 	  padding: 0px 7px;
-	  border-radius: 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
@@ -491,10 +457,9 @@ in with lib; {
 	  margin: 5px 0px 5px 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -510,10 +475,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -529,10 +491,7 @@ in with lib; {
 	  margin: 5px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -548,10 +507,7 @@ in with lib; {
 	  margin: 5px 0px;
 	  padding: 2px 15px 2px 5px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px 6px 0px;
 	  padding: 0px 10px 0px 5px;
-	  border-radius: 0px 15px 15px 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
@@ -567,10 +523,9 @@ in with lib; {
 	  margin: 5px 5px 5px 0px;
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
 	  padding: 0px 8px 0px 10px;
-	  border-radius: 15px;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -586,10 +541,7 @@ in with lib; {
 	  margin: 5px 0px;
 	  padding: 2px 14px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 0px;
 	  padding: 0px 14px;
-	  border-radius: 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
@@ -605,10 +557,7 @@ in with lib; {
 	  margin: 5px 0px;
 	  padding: 2px 5px 2px 15px;
 	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 0px 6px 4px;
 	  padding: 0px 5px 0px 10px;
-	  border-radius: 15px 0px 0px 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
