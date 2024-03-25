@@ -39,18 +39,21 @@ in with lib; {
         rewrite = { "" = "~"; };
       };
       "temperature" = {
-	critical-threshold = 80;
-	format-critical = " {temperatureC}°C";
-	format = " {temperatureC}°C";
+        # thermal-zone = 2;
+        critical-threshold = 80;
+        # hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
+        format-critical = "<span foreground='red'>{icon} {temperatureC}°C</span>";
+        format = "{icon} {temperatureC}°C";
+        format-icons = ["" "" ""];
       };
       "memory" = {
       	interval = 5;
-      	format = " {}%";
+      	format = "󰫗 {}%"; #  
         tooltip = true;
       };
       "cpu" = {
       	interval = 5;
-      	format = " {usage:2}%";
+      	format = " {usage:2}%"; #  
         tooltip = true;
       };
       "disk" = {
