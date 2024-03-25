@@ -22,8 +22,8 @@
     source = ./files/obs-studio;
     recursive = true;
   };
-  #home.file."Scripts" = {
-  #  source = ./files/scripts;
-  #  recursive = true;
-  #};
+  home.file."Scripts" = {
+    source = ./files/scripts;
+    recursive = true;
+  };
 }
