@@ -15,7 +15,7 @@ in with lib; {
 
       modules-center = [ "hyprland/workspaces" ] ;
       modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/themeselector" "custom/notification" "battery" "clock"  "tray" ];
+      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/notification" "battery" "clock"  "tray" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -475,7 +475,7 @@ in with lib; {
 	  background: #${palette.base00};
 	  margin: 6px 0px;
 	  padding: 0px 7px;
-	  border-radius: 0px;
+	  border-radius: 0px 15px 15px 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
