@@ -28,7 +28,7 @@ in with lib; {
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       "clock" = {
-	format = if clock24h == true then ''{: %H:%M}'' 
+	format = if clock24h == true then '' {:L%H:%M}'' 
 	else ''{: %I:%M %p}'';
       	tooltip = true;
 	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
