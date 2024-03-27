@@ -24,7 +24,7 @@ in {
     }
 
     window { 
-      width: 45%;
+      width: 30%;
       transparency: "real";
       orientation: vertical;
       border: 2px ;
@@ -63,7 +63,7 @@ in {
     }
 
     listview {
-      columns: 2;
+      columns: 1;
       lines: 9;
       padding: 8 0;
       fixed-height: true;
