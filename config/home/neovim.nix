@@ -27,7 +27,7 @@ in {
     };
 
     colorschemes.base16.enable = true;
-    colorschemes.base16.customColorScheme = {
+    colorschemes.base16.colorscheme = {
       base00 = "#${theme.base00}";
       base01 = "#${theme.base01}";
       base02 = "#${theme.base02}";
@@ -60,7 +60,7 @@ in {
       nvim-colorizer.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       lualine = {
         enable = true;
       };
@@ -96,7 +96,7 @@ in {
 	enable = true;
 	nixGrammars = true;
       };
-      nvim-cmp = {
+      cmp.settings = {
 	enable = true;
 	autoEnableSources = true;
 	sources = [

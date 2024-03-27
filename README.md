@@ -102,3 +102,29 @@ $6$YdPBODxytqUWXCYL$AHW1U9C6Qqkf6PZJI54jxFcPVm2sm/XWq3Z1qa94PFYz0FF.za9gl5WZL/z/
 Now when you want to rebuild the configuration you have access to an alias called flake-rebuild that will rebuild the flake based of the flakeDir variable you set in options.nix!
 
 Hope you enjoy!
+
+### Updating
+
+#### Add packages/edit config:
+
+After some changes in `.nix` files you should update your config with:
+
+```
+flake-rebuild
+```
+
+#### Update packages/flake
+
+If you want update all packages, you should write:
+
+```
+flake-update
+```
+
+If it is done, you also should update flake
+
+```
+sudo nixos-rebuild switch --flake .
+```
+
+And here you go, you updated all configuration!
