@@ -96,6 +96,9 @@ in {
 	enable = true;
 	nixGrammars = true;
       };
+      nvim-tree = {
+        enable = true;
+      };
       cmp.settings = {
 	enable = true;
 	autoEnableSources = true;
@@ -186,6 +189,16 @@ in {
     '';
 
     keymaps = [
+      {
+        key = "<space>e";
+        action = ":NvimTreeToggle<CR>";
+        options.silent = false;
+      }
+      {
+        key = "<space>c";
+        action = ":bw<CR>";
+        options.silent = false;
+      }
       {
         mode = "n";
         key = "<space>fb";

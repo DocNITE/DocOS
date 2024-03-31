@@ -16,11 +16,12 @@ in with lib; {
     systemd.enable = true;
     plugins = [
       # hyprplugins.hyprtrails
+      # hyprplugins.hyprbars
     ];
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=DP-1,preferred,auto,1.600000
+      monitor=eDP-1,preferred,auto,1.666667
       monitor=DP-2,preferred,auto,1
       windowrule = fullscreen, ^(wlogout)$
       windowrule = animation fade,^(wlogout)$
@@ -106,6 +107,17 @@ in with lib; {
       plugin {
         hyprtrails {
           color = rgba(${theme.base0A}ff)
+        }
+        hyprbars {
+          # example config
+          bar_height = 20
+          bar_buttons_alignment = left
+          bar_part_of_window = false
+
+          # example buttons (R -> L)
+          # hyprbars-button = color, size, on-click
+          hyprbars-button = rgb(ff4040), 10, 󰖭, hyprctl dispatch killactive
+          hyprbars-button = rgb(eeee11), 10, , hyprctl dispatch fullscreen 1
         }
       }
       exec-once = $POLKIT_BIN

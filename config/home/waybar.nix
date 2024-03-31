@@ -15,7 +15,7 @@ in with lib; {
 
       modules-center = [ "hyprland/workspaces" ] ;
       modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "custom/exit" "idle_inhibitor" "custom/hyprbindings" "custom/notification" "battery" "clock"  "tray" ];
+      modules-right = [ "tray" "custom/notification" "battery" "clock" "hyprland/language" "custom/exit" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -27,11 +27,17 @@ in with lib; {
       	on-scroll-up = "hyprctl dispatch workspace e+1";
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
+      "hyprland/language" = {
+        format = " {}";
+        format-en = "US";
+        format-ru = "RU";
+        format-ka = "GE";
+      };
       "clock" = {
-	format = if clock24h == true then '' {:L%H:%M}'' 
+	format = if clock24h == true then '' {:L%H:%M  %d/%m}'' 
 	else ''{: %I:%M %p}'';
       	tooltip = true;
-	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
+	tooltip-format = "<big>{:L%A, %d }</big><tt><small>{calendar}</small></tt>";
       };
       "hyprland/window" = {
       	max-length = 25;
@@ -331,6 +337,25 @@ in with lib; {
 	  border-radius: 10px;
 	''}
       }
+      #language {
+   	color: #${palette.base0D};
+	${if slickbar == true then ''
+	  background: #${palette.base00};
+	  border-radius: 50px 15px 50px 15px;
+	  margin: 5px;
+	  padding: 2px 20px;
+	'' else if simplebar == true then ''
+	  background: #${palette.base00};
+	  margin: 6px 4px;
+	  padding: 0px 10px;
+	  border-radius: 15px;
+	'' else ''
+	  background: #${palette.base01};
+	  margin: 4px;
+	  padding: 2px 10px;
+	  border-radius: 10px;
+	''}
+      }
       #memory {
    	color: #${palette.base0F};
 	${if slickbar == true then ''
@@ -606,12 +631,12 @@ in with lib; {
 	  padding: 2px 5px 2px 15px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 0px 6px 4px;
-	  padding: 0px 5px 0px 10px;
-	  border-radius: 15px 0px 0px 15px;
+	  margin: 6px 4px 6px 4px;
+	  padding: 0px 15px 0px 10px;
+	  border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
-	  margin: 4px 0px;
+	  margin: 6px 0px;
 	  padding: 2px 5px 2px 10px;
 	  border-radius: 10px 0px 0px 10px;
         ''}
