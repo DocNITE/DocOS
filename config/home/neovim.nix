@@ -81,10 +81,10 @@ in {
 	  };
 	  nixd.enable = true;
 	  html.enable = true;
-	  ccls.enable = true;
+          cssls.enable = true;
+          clangd.enable = true;
 	  cmake.enable = true;
 	  csharp-ls.enable = true;
-	  cssls.enable = true;
 	  gopls.enable = true;
 	  jsonls.enable = true;
 	  pyright.enable = true;
@@ -97,6 +97,9 @@ in {
 	nixGrammars = true;
       };
       nvim-tree = {
+        enable = true;
+      };
+      bufferline = {
         enable = true;
       };
       cmp.settings = {
@@ -206,12 +209,12 @@ in {
         options.noremap = true;
       }
       {
-        key = "<Tab>";
+        key = "]b";
         action = ":bnext<CR>";
         options.silent = false;
       }
       {
-        key = "<S-Tab>";
+        key = "[b";
         action = ":bprev<CR>";
         options.silent = false;
       }

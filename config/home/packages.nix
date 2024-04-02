@@ -11,7 +11,7 @@ in {
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
     bottom vscode krita libreoffice-qt  hyprpicker
-    dotnet-sdk_8 cmake clang
+    dotnet-sdk_8 cmake clang nix-direnv
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop fractal
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
