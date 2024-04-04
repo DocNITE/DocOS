@@ -10,10 +10,12 @@ in {
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
-    bottom vscode krita libreoffice-qt  hyprpicker
+    bottom vscode krita libreoffice-qt hyprpicker
     dotnet-sdk_8 cmake clang nix-direnv
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop fractal
+    nwg-dock-hyprland
+    cataclysm-dda
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
