@@ -15,6 +15,7 @@
     ./rofi.nix
     ./starship.nix
     ./waybar.nix
+    ./eww.nix
     ./wlogout.nix
     ./swappy.nix
     ./swaylock.nix
