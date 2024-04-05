@@ -24,12 +24,17 @@ in {
     }
 
     window { 
-      width: 30%;
+      x-offset: 10px;
+      y-offset: 10px;
+      location: north west;
+
+      width: 450px;
+      height: 700px;
       transparency: "real";
       orientation: vertical;
       border: 2px ;
-      border-color: #${palette.base0F};
-      border-radius: 10px;
+      border-color: #${palette.base0E};
+      border-radius: 15px;
     }
 
     mainbox {
@@ -76,6 +81,8 @@ in {
     //------------------------------------------------
 
     entry {
+      placeholder: "Start typing here!";
+      placeholder-color: #${palette.base01};
       text-color: #${palette.base05};
       padding: 10 10 0 0;
       margin: 0 -2 0 0;
@@ -104,14 +111,14 @@ in {
     button {
       padding:	      10px;
       background-color: @bg;
-      text-color:	      #${palette.base01};
+      text-color: #${palette.base01};
       vertical-align:   0.5; 
       horizontal-align: 0.5;
     }
 
     button selected {
       background-color: @bg;
-      text-color: #${palette.base0F};
+      text-color: #${palette.base0E};
     }
 
     message {
