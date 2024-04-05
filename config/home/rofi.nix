@@ -12,15 +12,16 @@ in {
     }
 
     configuration {
-      modi:		    "run,filebrowser,drun";
+      modi:		    "ssh,run,drun";
       show-icons:	    true;
       icon-theme:	    "Papirus";
       location:		    0;
-      font:		    "JetBrains Nerd Font 16";	
+      font:		    "JetBrainsMono Nerd Font 16";	
+      terminal:             "kitty";
       drun-display-format:  "{icon} {name}";
       display-drun:	    "   Apps ";
-      display-run:	    "   Run ";
-      display-filebrowser:  "   File ";
+      display-run:          "  Run ";
+      display-ssh:          "  SSH ";
     }
 
     window { 
@@ -29,7 +30,6 @@ in {
       location: north west;
 
       width: 450px;
-      height: 700px;
       transparency: "real";
       orientation: vertical;
       border: 2px ;
@@ -69,7 +69,6 @@ in {
 
     listview {
       columns: 1;
-      lines: 9;
       padding: 8 0;
       fixed-height: true;
       fixed-columns: true;

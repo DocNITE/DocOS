@@ -103,7 +103,7 @@ in with lib; {
       "custom/exit" = {
         tooltip = false;
         format = "";
-        on-click = "sleep 0.1 && wlogout";
+        on-click = "sleep 0.1 && task-waybar";
       };
       "custom/startmenu" = {
         tooltip = false;

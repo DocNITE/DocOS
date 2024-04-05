@@ -13,14 +13,13 @@ in {
         "control-center-margin-right": 10,
         "control-center-margin-left": 10,
         "notification-icon-size": 64,
-        "notification-body-image-height": 100,
+        "notification-body-image-height": 64,
         "notification-body-image-width": 200,
         "timeout": 10,
         "timeout-low": 5,
         "timeout-critical": 0,
-        "fit-to-screen": false,
-        "control-center-width": 500,
-        "control-center-height": 700,
+        "fit-to-screen": true,
+        "control-center-width": 450,
         "notification-window-width": 500,
         "keyboard-shortcuts": true,
         "image-visibility": "when-available",
@@ -29,8 +28,9 @@ in {
         "hide-on-action": true,
         "script-fail-notify": true,
         "widgets": [
-            "title",
+            "buttons-grid",
             "mpris",
+            "title",
             "volume",
             "backlight",
             "dnd",
@@ -38,9 +38,9 @@ in {
         ],
         "widget-config": {
             "title": {
-                "text": "Notification Center",
+                "text": "Notifications",
                 "clear-all-button": true,
-                "button-text": "󰆴 Clear All"
+                "button-text": "󰆴 Clear"
             },
             "dnd": {
                 "text": "Do Not Disturb"
@@ -54,52 +54,32 @@ in {
                 "image-radius": 7
             },
             "volume": {
-                "label": "󰕾"
+                "label": " 󰕾 "
             },
             "backlight": {
-                "label": "󰃟"
+                "label": " 󰃟 "
             },
             "buttons-grid": {
                 "actions": [
                     {
-                        "label": "⏹️",
-                        "command": "systemctl poweroff"
+                        "label": "⏻",
+                        "command": "sleep 1; systemctl poweroff"
                     },
                     {
-                        "label": "🔄",
-                        "command": "systemctl reboot"
+                        "label": "",
+                        "command": "sleep 1; systemctl reboot"
                     },
                     {
-                        "label": "🚪",
-                        "command": "hyprctl dispatch exit"
+                        "label": "󰈆",
+                        "command": "sleep 1; hyprctl dispatch exit"
                     },
                     {
-                        "label": "🗃️",
-                        "command": "thunar"
+                        "label": "󰏦",
+                        "command": "sleep 1; systemctl suspend"
                     },
                     {
-                        "label": "📸",
-                        "command": "gimp"
-                    },
-                    {
-                        "label": "📣",
-                        "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-                    },
-                    {
-                        "label": "🎙️",
-                        "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-                    },
-                    {
-                        "label": "🎮",
-                        "command": "steam"
-                    },
-                    {
-                        "label": "🌏",
-                        "command": "firefox"
-                    },
-                    {
-                        "label": "📹",
-                        "command": "obs"
+                        "label": "",
+                        "command": "sleep 1; swaylock"
                     }
                 ]
             }
@@ -134,7 +114,7 @@ in {
     .notification-content {
         background: #${palette.base00};
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 15px;
         border: 2px solid #${palette.base0D};
         margin: 0;
     }
@@ -150,7 +130,7 @@ in {
         color: #${palette.base00};
         text-shadow: none;
         padding: 0;
-        border-radius: 5px;
+        border-radius: 15px;
         margin-top: 5px;
         margin-right: 5px;
     }
@@ -166,18 +146,18 @@ in {
     .notification-action {
         border: 2px solid #${palette.base0D};
         border-top: none;
-        border-radius: 5px;
+        border-radius: 15px;
     }
 
 
     .notification-default-action:hover,
     .notification-action:hover {
-        color: #${palette.base0B};
-        background: #${palette.base0B}
+        color: #${palette.base07};
+        background: #${palette.base07}
     }
 
     .notification-default-action {
-        border-radius: 5px;
+        border-radius: 15px;
         margin: 0px;
     }
 
@@ -205,14 +185,14 @@ in {
         color: #${palette.base05};
         caret-color: #${palette.base05};
         border: 1px solid #${palette.base09};
-        border-radius: 5px
+        border-radius: 15px
     }
 
     .inline-reply-button {
         margin-left: 4px;
         background: #${palette.base00};
         border: 1px solid #${palette.base09};
-        border-radius: 5px;
+        border-radius: 15px;
         color: #${palette.base05}
     }
 
@@ -229,7 +209,7 @@ in {
     .body-image {
         margin-top: 6px;
         background-color: #${palette.base05};
-        border-radius: 5px
+        border-radius: 15px
     }
 
     .summary {
@@ -259,7 +239,7 @@ in {
 
     .control-center {
         background: #${palette.base00};
-        border: 2px solid #${palette.base0C};
+        border: 2px solid #${palette.base0E};
         border-radius: 15px;
     }
 
@@ -280,12 +260,12 @@ in {
     }
 
     .widget-title {
-        color: #${palette.base0B};
+        color: #${palette.base07};
         background: #${palette.base00};
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
         font-size: 1.5rem;
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .widget-title>button {
@@ -294,7 +274,7 @@ in {
         text-shadow: none;
         background: #${palette.base00};
         box-shadow: none;
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .widget-title>button:hover {
@@ -306,13 +286,13 @@ in {
         background: #${palette.base00};
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: large;
-        color: #${palette.base0B};
+        color: #${palette.base07};
     }
 
     .widget-dnd>switch {
-        border-radius: 5px;
+        border-radius: 10px;
         /* border: 1px solid #${palette.base0B}; */
         background: #${palette.base0B};
     }
@@ -324,12 +304,12 @@ in {
 
     .widget-dnd>switch slider {
         background: #${palette.base00};
-        border-radius: 5px
+        border-radius: 10px
     }
 
     .widget-dnd>switch:checked slider {
         background: #${palette.base00};
-        border-radius: 5px
+        border-radius: 10px
     }
 
     .widget-label {
@@ -350,7 +330,7 @@ in {
     }
 
     .widget-mpris > box > button {
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .widget-mpris-player {
@@ -369,16 +349,16 @@ in {
 
     .widget-buttons-grid {
         font-size: x-large;
-        padding: 5px;
+        padding: 15px;
         margin: 10px 10px 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         background: #${palette.base01};
     }
 
     .widget-buttons-grid>flowbox>flowboxchild>button {
         margin: 3px;
         background: #${palette.base00};
-        border-radius: 5px;
+        border-radius: 10px;
         color: #${palette.base05};
     }
 
@@ -401,7 +381,7 @@ in {
         background: #${palette.base01};
         padding: 5px;
         margin: 10px 10px 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: x-large;
         color: #${palette.base05};
     }
@@ -415,14 +395,14 @@ in {
         background-color: #${palette.base00};
         padding: 4px 8px 8px;
         margin: 0 8px 8px;
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .widget-backlight {
         background: #${palette.base01};
         padding: 5px;
         margin: 10px 10px 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: x-large;
         color: #${palette.base05}
     }
