@@ -15,7 +15,7 @@ in {
   hostname = "nixos";
   gitUsername = "DocNITE";
   gitEmail = "docnight0530@gmail.com";
-  theme = "ayu-dark";
+  theme = "catppuccin-macchiato";
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
