@@ -358,6 +358,8 @@ in {
     .widget-buttons-grid>flowbox>flowboxchild>button {
         margin: 3px;
         background: #${palette.base00};
+                text-shadow: none;
+        box-shadow: none;
         border-radius: 10px;
         color: #${palette.base05};
     }

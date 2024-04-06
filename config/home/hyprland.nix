@@ -102,6 +102,8 @@ in with lib; {
             passes = 3
             new_optimizations = on
             ignore_opacity = on
+            # blurls = waybar
+            # layerrule = blur,waybar
         }
       }
       plugin {

@@ -166,7 +166,7 @@ in with lib; {
 	${if slickbar == true || simplebar == true then ''
 	  background-color: rgba(26,27,38,0); /*#151722;*/ 
 	  border-bottom: 1px solid rgba(26,27,38,0);
-          border-radius: 15px;
+          border-radius: 0px;
 	  color: #${palette.base0F};
 	'' else ''
 	  background-color: #${palette.base00};
