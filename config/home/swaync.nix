@@ -63,23 +63,23 @@ in {
                 "actions": [
                     {
                         "label": "⏻",
-                        "command": "sleep 1; systemctl poweroff"
+                        "command": "systemctl poweroff"
                     },
                     {
                         "label": "",
-                        "command": "sleep 1; systemctl reboot"
+                        "command": "systemctl reboot"
                     },
                     {
                         "label": "󰈆",
-                        "command": "sleep 1; hyprctl dispatch exit"
+                        "command": "hyprctl dispatch exit"
                     },
                     {
                         "label": "󰏦",
-                        "command": "sleep 1; systemctl suspend"
+                        "command": "systemctl suspend"
                     },
                     {
                         "label": "",
-                        "command": "sleep 1; swaylock"
+                        "command": "swaylock"
                     }
                 ]
             }
@@ -358,8 +358,6 @@ in {
     .widget-buttons-grid>flowbox>flowboxchild>button {
         margin: 3px;
         background: #${palette.base00};
-                text-shadow: none;
-        box-shadow: none;
         border-radius: 10px;
         color: #${palette.base05};
     }
