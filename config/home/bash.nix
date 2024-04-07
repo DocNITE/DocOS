@@ -19,7 +19,7 @@ lib.mkIf (theShell == "bash") {
       fi
     '';
     sessionVariables = {
-      ZANEYOS = true;
+      DOCOS = true;
       FLAKEBACKUP = "${flakeBackup}";
       FLAKEPREV = "${flakePrev}";
     };

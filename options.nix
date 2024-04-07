@@ -7,7 +7,7 @@ let
   username = "docnight";
   hostname = "nixos";
   userHome = "/home/${username}";
-  flakeDir = "${userHome}/zaneyos";
+  flakeDir = "${userHome}/docos";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
 in {
   # User Variables
@@ -26,8 +26,8 @@ in {
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
   screenshotDir = "${userHome}/Pictures/Screenshots";
   flakeDir = "${flakeDir}";
-  flakePrev = "${userHome}/.zaneyos-previous";
-  flakeBackup = "${userHome}/.zaneyos-backup";
+  flakePrev = "${userHome}/.docos-previous";
+  flakeBackup = "${userHome}/.docos-backup";
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
