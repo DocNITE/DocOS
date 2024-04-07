@@ -27,6 +27,10 @@
     source = ./files/eww;
     recursive = true;
   };
+  home.file.".config/nwg-dock-hyprland" = {
+    source = ./files/nwg-dock-hyprland;
+    recursive = true;
+  };
   home.file."Scripts" = {
     source = ./files/scripts;
     recursive = true;
