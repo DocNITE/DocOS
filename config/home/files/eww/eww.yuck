@@ -64,12 +64,12 @@
   "date '+%H:%M %b %d, %Y'")
 
 (defwindow bar
-  :monitor 0
-  :windowtype "dock"
+  :monitor 1
+  :exclusive true
   :geometry (geometry :x "0%"
                       :y "0%"
                       :width "90%"
                       :height "10px"
                       :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
+  :reserve (struts :side "top" :distance "40px")
   (bar))
