@@ -19,7 +19,7 @@ lib.mkIf (theShell == "bash") {
       fi
     '';
     sessionVariables = {
-      ZANEYOS = true;
+      DOCOS = true;
       FLAKEBACKUP = "${flakeBackup}";
       FLAKEPREV = "${flakePrev}";
     };
@@ -34,7 +34,7 @@ lib.mkIf (theShell == "bash") {
       la="lsd -a";
       lal="lsd -al";
       ".."="cd ..";
-      neofetch="neofetch --ascii ~/.config/ascii-neofetch";
+      neofetch="neofetch --ascii ~/.config/ascii-neofetch --ascii_colors 1 2 3 4 5 6";
       #neofetch="neofetch --ascii ~/.config/ascii-neofetch --source ~/.config/image-neofetch.jpg --backend kitty";
     };
   };

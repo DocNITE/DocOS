@@ -15,7 +15,7 @@
     ./rofi.nix
     ./starship.nix
     ./waybar.nix
-    ./wlogout.nix
+    ./eww.nix
     ./swappy.nix
     ./swaylock.nix
     ./swaync.nix
@@ -25,5 +25,8 @@
 
     # Place Home Files Like Pictures
     ./files.nix
+
+    # Unused
+    #./wlogout.nix
   ];
 }

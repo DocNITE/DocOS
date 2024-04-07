@@ -23,6 +23,10 @@
     source = ./files/obs-studio;
     recursive = true;
   };
+  home.file.".config/eww" = {
+    source = ./files/eww;
+    recursive = true;
+  };
   home.file."Scripts" = {
     source = ./files/scripts;
     recursive = true;

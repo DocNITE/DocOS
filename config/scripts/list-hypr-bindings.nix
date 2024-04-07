@@ -19,7 +19,7 @@ pkgs.writeShellScriptBin "list-hypr-bindings" ''
   " + ENTER" "Terminal" "${terminal}" \
   " + SHIFT + ENTER" "Rofi App Launcher" "rofi -show drun" \
   " + Q" "Kill Focused Window" "killactive" \
-  " + SHIFT + W" "Search Websites Like Nix Packages" "web-search" \
+  " + SHIFT + W" "Set Wallpaper On Dekstop" "set-wallpaper" \
   " + SHIFT + N" "Reload SwayNC Styling" "swaync-client -rs" \
   " + W" "Launch Web Browser" "${browser}" \
   " + E" "Launch Emoji Selector" "emopicker9000" \

@@ -24,7 +24,7 @@ in
 	"Pictures"
         "Videos"
         "Scripts"
-        "zaneyos"
+        "docos"
 	".local/share/sddm"
 	".mozilla"
 	".cache"

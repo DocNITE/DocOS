@@ -13,9 +13,9 @@ in with lib; {
       layer = "top";
       position = "top";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "pulseaudio" "temperature" "cpu" "memory"];
-      modules-right = [ "tray" "custom/notification" "battery" "clock" "hyprland/language" "custom/exit" ];
+      modules-center = [ "clock" "custom/notification" ] ;
+      modules-left = [ "custom/startmenu" "hyprland/workspaces" ];
+      modules-right = [ "temperature" "cpu" "memory" "pulseaudio" "battery" "tray" "custom/exit" ];
 
       "hyprland/workspaces" = {
       	format = if bar-number == true then "{name}" else "{icon}";
@@ -34,10 +34,11 @@ in with lib; {
         format-ka = "GE";
       };
       "clock" = {
-	format = if clock24h == true then '' {:L%H:%M  %d/%m}'' 
-	else ''{: %I:%M %p}'';
+	format = if clock24h == true then '' {:L%H:%M}'' 
+	else '' {:%I:%M %p}'';
       	tooltip = true;
-	tooltip-format = "<big>{:L%A, %d }</big><tt><small>{calendar}</small></tt>";
+        tooltip-format = "<big>{:L%A, %d }</big><tt><small>{calendar}</small></tt>";
+        on-click = "sleep 0.1 && task-waybar";
       };
       "hyprland/window" = {
       	max-length = 25;
@@ -102,7 +103,7 @@ in with lib; {
       "custom/exit" = {
         tooltip = false;
         format = "";
-        on-click = "sleep 0.1 && wlogout";
+        on-click = "sleep 0.1 && task-waybar";
       };
       "custom/startmenu" = {
         tooltip = false;
@@ -163,9 +164,9 @@ in with lib; {
       }
       window#waybar {
 	${if slickbar == true || simplebar == true then ''
-	  background-color: rgba(26,27,38,0);
+	  background-color: rgba(26,27,38,0); /*#151722;*/ 
 	  border-bottom: 1px solid rgba(26,27,38,0);
-	  border-radius: 0px;
+          border-radius: 0px;
 	  color: #${palette.base0F};
 	'' else ''
 	  background-color: #${palette.base00};
@@ -376,7 +377,7 @@ in with lib; {
 	''}
       }
       #clock {
-    	color: #${palette.base0B};
+    	color: #${palette.base0C};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
 	  border-radius: 15px 50px 15px 50px;
@@ -384,9 +385,9 @@ in with lib; {
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px;
+	  margin: 6px 0px 6px 4px;
 	  padding: 0px 10px;
-	  border-radius: 15px;
+	  border-radius: 15px 0px 0px 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -517,9 +518,9 @@ in with lib; {
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px;
-	  padding: 0px 10px;
-	  border-radius: 15px;
+	  margin: 6px 0px 6px 4px;
+	  padding: 0px 0px 0px 10px;
+	  border-radius: 15px 0px 0px 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -555,9 +556,9 @@ in with lib; {
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px;
-	  padding: 0px 10px;
-	  border-radius: 15px;
+	  margin: 6px 0px;
+	  padding: 0px 10px 0px 0px;
+	  border-radius: 0px 15px 15px 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
@@ -593,7 +594,7 @@ in with lib; {
 	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px;
+	  margin: 6px 4px 6px 10px;
 	  padding: 0px 8px 0px 10px;
 	  border-radius: 15px;
 	'' else ''
@@ -623,7 +624,7 @@ in with lib; {
 	''}
       }
       #custom-exit {
-    	color: #${palette.base0E};
+    	color: #${palette.base05};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
 	  border-radius: 15px 0px 0px 50px;
@@ -631,9 +632,9 @@ in with lib; {
 	  padding: 2px 5px 2px 15px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
-	  margin: 6px 4px 6px 4px;
+	  margin: 6px 10px 6px 0px;
 	  padding: 0px 15px 0px 10px;
-	  border-radius: 15px;
+	  border-radius: 0px 15px 15px 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 6px 0px;
