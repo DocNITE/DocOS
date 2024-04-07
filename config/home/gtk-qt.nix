@@ -14,7 +14,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "Ubuntu";
+      name = "JetBrainsMono Nerd Font Bold";
       size = 12;
       package = pkgs.ubuntu_font_family;
     };
