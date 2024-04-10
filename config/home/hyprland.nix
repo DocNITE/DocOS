@@ -21,8 +21,8 @@ in with lib; {
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=eDP-1,preferred,auto,1.666667
-      monitor=DP-2,preferred,auto,1
+      monitor=eDP-1,preferred,0x0,1.666667
+      monitor=HDMI-A-1,preferred,-160x-1080,1
       windowrule = fullscreen, ^(wlogout)$
       windowrule = animation fade,^(wlogout)$
       general {
@@ -141,6 +141,7 @@ in with lib; {
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once = swww init
       exec-once = waybar
+      exec-once = nwg-dock-hyprland -x -mb 6 -o eDP-1
       exec-once = swaync
       exec-once = wallsetter
       exec-once = nm-applet --indicator

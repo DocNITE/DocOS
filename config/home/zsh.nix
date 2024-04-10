@@ -55,7 +55,7 @@ lib.mkIf (theShell == "zsh") {
       lal="lsd -al";
       ".."="cd ..";
       neofetch="neofetch --ascii ~/.config/ascii-neofetch --ascii_colors 1 2 3 4 5 6";
-      #neofetch="neofetch --ascii ~/.config/ascii-neofetch --source ~/.config/image-neofetch.jpg --backend kitty";
+      uwufetch="uwufetch -i $HOME/.face";
     };
   };
 }

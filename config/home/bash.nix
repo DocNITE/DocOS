@@ -13,10 +13,12 @@ lib.mkIf (theShell == "bash") {
       #fi
     '';
     initExtra = ''
-      neofetch
-      if [ -f $HOME/.bashrc-personal ]; then
-        source $HOME/.bashrc-personal
-      fi
+      uwufetch
+
+      #neofetch
+      #if [ -f $HOME/.bashrc-personal ]; then
+      #  source $HOME/.bashrc-personal
+      #fi
     '';
     sessionVariables = {
       DOCOS = true;
@@ -35,7 +37,7 @@ lib.mkIf (theShell == "bash") {
       lal="lsd -al";
       ".."="cd ..";
       neofetch="neofetch --ascii ~/.config/ascii-neofetch --ascii_colors 1 2 3 4 5 6";
-      #neofetch="neofetch --ascii ~/.config/ascii-neofetch --source ~/.config/image-neofetch.jpg --backend kitty";
+      uwufetch="uwufetch -i $HOME/.face";
     };
   };
 }
