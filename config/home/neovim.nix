@@ -9,7 +9,7 @@ in {
 
     globals.mapleader = " "; # Sets the leader key to space
     
-    options = {
+    opts = {
       clipboard="unnamedplus";
       number = true;         # Show line numbers
       relativenumber = true; # Show relative line numbers
@@ -102,21 +102,19 @@ in {
       bufferline = {
         enable = true;
       };
-      cmp.settings = {
-	enable = true;
-	autoEnableSources = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = {
-	    action = ''cmp.mapping.select_next_item()'';
-	    modes = [ "i" "s" ];
+      cmp = {
+        enable = true;
+        settings = {
+	  autoEnableSources = true;
+	  sources = [
+	    { name = "nvim_lsp"; }
+	    { name = "path"; }
+	    { name = "buffer"; }
+	  ];
+	  mapping = {
+	    "<CR>" = "cmp.mapping.confirm({ select = true })";
 	  };
-	};
+        };
       };
     };
 
