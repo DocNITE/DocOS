@@ -14,7 +14,7 @@ theKBDLayout theSecondKBDLayout; in
       enable = true;
       autoNumlock = true;
       wayland.enable = true;
-      theme = "tokyo-night-sddm";
+      theme = "sugar-dark";
     };
   };
 

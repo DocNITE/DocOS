@@ -78,10 +78,10 @@ in with lib; {
         spacing = 12;
       };
       "pulseaudio" = {
-        format = "{icon} {volume}% {format_source}";
-        format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source}";
+        format = "{icon} {volume}%";
+        format-bluetooth = "{icon} {volume}%";
+        format-bluetooth-muted = "󰝟 ";
+        format-muted = "󰝟 ";
         format-source = " {volume}%";
         format-source-muted = "";
         format-icons = {
@@ -596,7 +596,7 @@ in with lib; {
 	  background: #${palette.base00};
 	  margin: 6px 4px 6px 10px;
 	  padding: 0px 8px 0px 10px;
-	  border-radius: 15px;
+          border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;
