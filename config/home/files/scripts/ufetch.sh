@@ -81,3 +81,4 @@ ${c1}   //${c0}\\${c1}____${c0}//     ${lc}PACKAGES:  ${ic}${packages}${reset}
 ${c1}  // ${c0}/\\   ${c1}\\==   ${lc}SHELL:     ${ic}${shell}${reset}
 ${c0}    // \\   ${c1}\\    ${lc}${uitype}:        ${ic}${ui}${reset}
 
+EOF
