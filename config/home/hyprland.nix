@@ -6,6 +6,8 @@ let
   inherit (import ../../options.nix) 
     browser cpuType gpuType
     wallpaperDir borderAnim
+    colorfulBorder
+    dockPanel hyprbars
     theKBDLayout terminal
     theSecondKBDLayout
     theKBDVariant sdl-videodriver;
@@ -15,8 +17,9 @@ in with lib; {
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
+      # TODO: Add support for options.nix
       # hyprplugins.hyprtrails
-      # hyprplugins.hyprbars
+      hyprplugins.hyprbars
     ];
     extraConfig = let
       modifier = "SUPER";
@@ -29,7 +32,11 @@ in with lib; {
         gaps_in = 6
         gaps_out = 8
         border_size = 2
+        ${if colorfulBorder == true then ''
         col.active_border = rgba(${theme.base0C}ff) rgba(${theme.base0D}ff) rgba(${theme.base0B}ff) rgba(${theme.base0E}ff) 45deg
+        '' else ''
+        col.active_border = rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg
+        ''}
         col.inactive_border = rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg
         layout = dwindle
         resize_on_border = true
@@ -125,15 +132,21 @@ in with lib; {
           color = rgba(${theme.base0A}ff)
         }
         hyprbars {
-          # example config
-          bar_height = 20
+          # config
+          bar_color = rgba(${theme.base00}cc)
+          bar_height = 24
           bar_buttons_alignment = left
           bar_part_of_window = false
+          bar_precedence_over_border = true
+          bar_text_font = JetBrainsMono Nerd Font Bold
+          bar_text_size = 12
+          col.text = rgba(${theme.base05}ff)
 
-          # example buttons (R -> L)
+          # buttons (R -> L) 󰖭 
           # hyprbars-button = color, size, on-click
-          hyprbars-button = rgb(ff4040), 10, 󰖭, hyprctl dispatch killactive
-          hyprbars-button = rgb(eeee11), 10, , hyprctl dispatch fullscreen 1
+          hyprbars-button = rgb(ff4040), 14,  , hyprctl dispatch killactive
+          hyprbars-button = rgb(eeee11), 14,  , hyprctl dispatch fullscreen 1
+          hyprbars-button = rgb(2aca40), 14,  , hyprctl dispatch togglefloating
         }
       }
       exec-once = $POLKIT_BIN
@@ -141,7 +154,10 @@ in with lib; {
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once = swww init
       exec-once = waybar
-      exec-once = nwg-dock-hyprland -x -mb 6 -o eDP-1
+      ${if dockPanel == true then ''
+        exec-once = nwg-dock-hyprland -x -mb 6 -o eDP-1
+      '' else ''
+      ''}
       exec-once = swaync
       exec-once = wallsetter
       exec-once = nm-applet --indicator

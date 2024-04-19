@@ -80,8 +80,8 @@ in with lib; {
       "pulseaudio" = {
         format = "{icon} {volume}%";
         format-bluetooth = "{icon} {volume}%";
-        format-bluetooth-muted = "󰝟 ";
-        format-muted = "󰝟 ";
+        format-bluetooth-muted = "󰝟";
+        format-muted = "󰝟";
         format-source = " {volume}%";
         format-source-muted = "";
         format-icons = {

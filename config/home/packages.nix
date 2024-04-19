@@ -15,6 +15,7 @@ in {
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop fractal
     nwg-dock-hyprland
+    hilbish zathura zsh
     cataclysm-dda
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
@@ -33,6 +34,7 @@ in {
     (import ./../scripts/screen-man.nix { inherit pkgs; })
     (import ./../scripts/screenshootin.nix { inherit pkgs; })
     (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
+    (import ./../scripts/ufetch.nix { inherit pkgs; })
   ];
 
   programs.gh.enable = true;

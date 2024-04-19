@@ -13,7 +13,7 @@ lib.mkIf (theShell == "bash") {
       #fi
     '';
     initExtra = ''
-      uwufetch
+      ufetch
 
       #neofetch
       #if [ -f $HOME/.bashrc-personal ]; then
