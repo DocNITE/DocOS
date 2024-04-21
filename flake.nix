@@ -15,10 +15,14 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccinifier = {
+      url = "github:lighttigerXIV/catppuccinifier";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, impermanence, catppuccinifier, ... }:
   let
     system = "x86_64-linux";
     inherit (import ./options.nix) username hostname;
@@ -43,6 +47,7 @@
 	    home-manager.extraSpecialArgs = {
 	      inherit username; inherit inputs;
               inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
+              inherit (inputs) nixpkgs catppuccinifier;
             };
 	    home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

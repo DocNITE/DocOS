@@ -16,7 +16,7 @@ in {
     whatsapp-for-linux telegram-desktop fractal
     nwg-dock-hyprland whois zfxtop headset
     hilbish zathura zsh p7zip
-    cataclysm-dda
+    cataclysm-dda 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })

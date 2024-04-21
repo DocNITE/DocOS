@@ -14,6 +14,7 @@
     noto-fonts-color-emoji material-icons brightnessctl
     toybox virt-viewer swappy ripgrep appimage-run 
     networkmanagerapplet yad playerctl nh rar
+    inputs.catppuccinifier.packages.${pkgs.system}.cli
   ];
 
   programs = {
