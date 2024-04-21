@@ -26,8 +26,10 @@ in with lib; {
     in concatStrings [ ''
       monitor=eDP-1,preferred,0x0,1.666667
       monitor=HDMI-A-1,preferred,-160x-1080,1
-      windowrule = fullscreen, ^(wlogout)$
-      windowrule = animation fade, ^(wlogout)$
+      # windowrule = fullscreen, ^(rofi)$
+      # windowrule = opacity 0.92 0.85, ^(rofi)$
+      # windowrule = fullscreen, ^(wlogout)$
+      # windowrule = animation fade, ^(wlogout)$
       # windowrule= opacity 0.92 0.85, ^(discord)$
       general {
         gaps_in = 6

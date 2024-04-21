@@ -14,8 +14,8 @@ in {
     dotnet-sdk_8 cmake clang nix-direnv
     qemu wineWowPackages.stable winetricks
     whatsapp-for-linux telegram-desktop fractal
-    nwg-dock-hyprland
-    hilbish zathura zsh
+    nwg-dock-hyprland whois zfxtop headset
+    hilbish zathura zsh p7zip
     cataclysm-dda
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
