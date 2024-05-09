@@ -12,8 +12,7 @@ let
     theSecondKBDLayout
     theKBDVariant sdl-videodriver;
 in with lib; {
-  wayland.windowManager.hyprland = {
-    enable = true;
+  wayland.windowManager.hyprland = { enable = true;
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
@@ -183,14 +182,14 @@ in with lib; {
       ''}
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
-      bind = ${modifier},D,exec,discord
+      bind = ${modifier},D,exec,dorion
       bind = ${modifier},O,exec,obs
       bind = ${modifier},G,exec,gimp
       bind = ${modifier}SHIFT,G,exec,godot4
       bind = ${modifier},T,exec,thunar
       bind = ${modifier},M,exec,spotify
       bind = ${modifier},Q,killactive,
-      bind = ${modifier},P,pseudo,
+      bind = ${modifier}SHIFT,P,pseudo,
       bind = ${modifier}SHIFT,I,togglesplit,
       bind = ${modifier},F,fullscreen,
       bind = ${modifier}SHIFT,F,togglefloating,

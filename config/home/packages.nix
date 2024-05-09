@@ -11,12 +11,12 @@ in {
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
     bottom vscode krita libreoffice-qt hyprpicker
-    dotnet-sdk_8 cmake clang nix-direnv
-    qemu wineWowPackages.stable winetricks
+    dotnet-sdk_8 cmake clang nix-direnv wf-recorder
+    qemu wineWowPackages.stable winetricks appimage-run
     whatsapp-for-linux telegram-desktop fractal
-    nwg-dock-hyprland whois zfxtop headset
-    hilbish zathura zsh p7zip
-    cataclysm-dda 
+    nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
+    hilbish zathura zsh p7zip discordo dorion android-tools
+    cataclysm-dda ani-cli aria yt-dlp ffmpeg fzf flutter
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
