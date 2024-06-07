@@ -19,7 +19,10 @@ in {
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
+  colorfulBorder = false;
   borderAnim = true;
+  dockPanel  = false;
+  hyprbars   = false; # NOT WORK
   browser = "brave";
   wallpaperGit = "https://gitlab.com/DocNITE/wallpapers.git"; # This will give you my wallpapers
   # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 

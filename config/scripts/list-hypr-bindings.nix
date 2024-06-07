@@ -32,7 +32,7 @@ pkgs.writeShellScriptBin "list-hypr-bindings" ''
   " + P" "Pseudo Tiling" "pseudo" \
   " + SHIFT + I" "Toggle Split Direction" "togglesplit" \
   " + F" "Toggle Focused Fullscreen" "fullscreen" \
-  " + SHIFT + F" "Toggle Focused Floating" "fullscreen" \
+  " + SHIFT + F" "Toggle Focused Floating" "togglefloating" \
   " + SHIFT + C" "Quit / Exit Hyprland" "exit" \
   " + Left" "Move Focus To Window On The Left" "movefocus,l" \
   " + Right" "Move Focus To Window On The Right" "movefocus,r" \

@@ -6,30 +6,39 @@ let
   inherit (import ../../options.nix) 
     browser cpuType gpuType
     wallpaperDir borderAnim
+    colorfulBorder
+    dockPanel hyprbars
     theKBDLayout terminal
     theSecondKBDLayout
     theKBDVariant sdl-videodriver;
 in with lib; {
-  wayland.windowManager.hyprland = {
-    enable = true;
+  wayland.windowManager.hyprland = { enable = true;
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
+      # TODO: Add support for options.nix
       # hyprplugins.hyprtrails
       # hyprplugins.hyprbars
     ];
     extraConfig = let
       modifier = "SUPER";
     in concatStrings [ ''
-      monitor=eDP-1,preferred,auto,1.666667
-      monitor=DP-2,preferred,auto,1
-      windowrule = fullscreen, ^(wlogout)$
-      windowrule = animation fade,^(wlogout)$
+      monitor=eDP-1,preferred,0x0,1.666667
+      monitor=HDMI-A-1,preferred,-160x-1080,1
+      # windowrule = fullscreen, ^(rofi)$
+      # windowrule = opacity 0.92 0.85, ^(rofi)$
+      # windowrule = fullscreen, ^(wlogout)$
+      # windowrule = animation fade, ^(wlogout)$
+      # windowrule= opacity 0.92 0.85, ^(discord)$
       general {
         gaps_in = 6
         gaps_out = 8
         border_size = 2
+        ${if colorfulBorder == true then ''
         col.active_border = rgba(${theme.base0C}ff) rgba(${theme.base0D}ff) rgba(${theme.base0B}ff) rgba(${theme.base0E}ff) 45deg
+        '' else ''
+        col.active_border = rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg
+        ''}
         col.inactive_border = rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg
         layout = dwindle
         resize_on_border = true
@@ -77,21 +86,35 @@ in with lib; {
       }
       animations {
         enabled = yes
-        bezier = wind, 0.05, 0.9, 0.1, 1.05
-        bezier = winIn, 0.1, 1.1, 0.1, 1.1
-        bezier = winOut, 0.3, -0.3, 0, 1
+        first_launch_animation = true
+
+        # RandomDots Animations
+
+        bezier = myBezier, 0.05, 0.9, 0.1, 1.05
         bezier = liner, 1, 1, 1, 1
-        animation = windows, 1, 6, wind, slide
-        animation = windowsIn, 1, 6, winIn, slide
-        animation = windowsOut, 1, 5, winOut, slide
-        animation = windowsMove, 1, 5, wind, slide
-        animation = border, 1, 1, liner
+        animation = windows, 1, 7, myBezier
+        animation = windowsOut, 1, 7, default, popin 80%
+        animation = border, 1, 10, default
+        animation = borderangle, 1, 8, default
+        animation = fade, 1, 7, default
+        animation = workspaces, 1, 6, default
+
+        # ZaneyOS Animations
+        #bezier = wind, 0.05, 0.9, 0.1, 1.05
+        #bezier = winIn, 0.1, 1.1, 0.1, 1.1
+        #bezier = winOut, 0.3, -0.3, 0, 1
+        #bezier = liner, 1, 1, 1, 1
+        #animation = windows, 1, 6, wind, slide
+        #animation = windowsIn, 1, 6, winIn, slide
+        #animation = windowsOut, 1, 5, winOut, slide
+        #animation = windowsMove, 1, 5, wind, slide
+        #animation = border, 1, 1, liner
         ${if borderAnim == true then ''
           animation = borderangle, 1, 30, liner, loop
         '' else ''
         ''}
-        animation = fade, 1, 10, default
-        animation = workspaces, 1, 5, wind
+        #animation = fade, 1, 10, default
+        #animation = workspaces, 1, 5, wind
       }
       decoration {
         rounding = 10
@@ -111,15 +134,21 @@ in with lib; {
           color = rgba(${theme.base0A}ff)
         }
         hyprbars {
-          # example config
-          bar_height = 20
+          # config
+          bar_color = rgba(${theme.base00}cc)
+          bar_height = 24
           bar_buttons_alignment = left
           bar_part_of_window = false
+          bar_precedence_over_border = true
+          bar_text_font = JetBrainsMono Nerd Font Bold
+          bar_text_size = 12
+          col.text = rgba(${theme.base05}ff)
 
-          # example buttons (R -> L)
+          # buttons (R -> L) 󰖭 
           # hyprbars-button = color, size, on-click
-          hyprbars-button = rgb(ff4040), 10, 󰖭, hyprctl dispatch killactive
-          hyprbars-button = rgb(eeee11), 10, , hyprctl dispatch fullscreen 1
+          hyprbars-button = rgb(ff4040), 14,  , hyprctl dispatch killactive
+          hyprbars-button = rgb(eeee11), 14,  , hyprctl dispatch fullscreen 1
+          hyprbars-button = rgb(2aca40), 14,  , hyprctl dispatch togglefloating
         }
       }
       exec-once = $POLKIT_BIN
@@ -127,6 +156,10 @@ in with lib; {
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once = swww init
       exec-once = waybar
+      ${if dockPanel == true then ''
+        exec-once = nwg-dock-hyprland -x -mb 6 -o eDP-1
+      '' else ''
+      ''}
       exec-once = swaync
       exec-once = wallsetter
       exec-once = nm-applet --indicator
@@ -149,14 +182,14 @@ in with lib; {
       ''}
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
-      bind = ${modifier},D,exec,discord
+      bind = ${modifier},D,exec,dorion
       bind = ${modifier},O,exec,obs
       bind = ${modifier},G,exec,gimp
       bind = ${modifier}SHIFT,G,exec,godot4
       bind = ${modifier},T,exec,thunar
       bind = ${modifier},M,exec,spotify
       bind = ${modifier},Q,killactive,
-      bind = ${modifier},P,pseudo,
+      bind = ${modifier}SHIFT,P,pseudo,
       bind = ${modifier}SHIFT,I,togglesplit,
       bind = ${modifier},F,fullscreen,
       bind = ${modifier}SHIFT,F,togglefloating,

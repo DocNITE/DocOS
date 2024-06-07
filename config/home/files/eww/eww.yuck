@@ -63,8 +63,7 @@
 (defpoll time :interval "10s"
   "date '+%H:%M %b %d, %Y'")
 
-(defwindow bar
-  :monitor 1
+(defwindow bar []
   :exclusive true
   :geometry (geometry :x "0%"
                       :y "0%"

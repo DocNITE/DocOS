@@ -78,10 +78,10 @@ in with lib; {
         spacing = 12;
       };
       "pulseaudio" = {
-        format = "{icon} {volume}% {format_source}";
-        format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source}";
+        format = "{icon} {volume}%";
+        format-bluetooth = "{icon} {volume}%";
+        format-bluetooth-muted = "󰝟";
+        format-muted = "󰝟";
         format-source = " {volume}%";
         format-source-muted = "";
         format-icons = {
@@ -107,7 +107,7 @@ in with lib; {
       };
       "custom/startmenu" = {
         tooltip = false;
-        format = " ";
+        format = "";
         # exec = "rofi -show drun";
         on-click = "sleep 0.1 && rofi-launcher";
       };
@@ -149,11 +149,11 @@ in with lib; {
           critical = 15;
         };
         format = "{icon} {capacity}%";
-        format-charging = "󰂄 {capacity}%";
+        format-charging = "{icon}󱐋{capacity}%";
         format-plugged = "󱘖 {capacity}%";
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+        format-icons = [ "" "" "" "" ""]; # ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         on-click = "";
-        tooltip = false;
+        tooltip = true;
       };
     }];
     style = concatStrings [''
@@ -595,8 +595,8 @@ in with lib; {
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
 	  margin: 6px 4px 6px 10px;
-	  padding: 0px 8px 0px 10px;
-	  border-radius: 15px;
+	  padding: 0px 16px 0px 10px;
+          border-radius: 15px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px;

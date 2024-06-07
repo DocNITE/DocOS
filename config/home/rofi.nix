@@ -8,7 +8,8 @@ in {
 
     * {
       bg: #${palette.base00};
-      background-color: @bg;
+      // background-color: @bg;
+      background-color: rgba(0, 0, 0, 0);
     }
 
     configuration {
@@ -19,22 +20,23 @@ in {
       font:		    "JetBrainsMono Nerd Font 16";	
       terminal:             "kitty";
       drun-display-format:  "{icon} {name}";
-      display-drun:	    "   Apps ";
+      display-drun:	    "  Apps ";
       display-run:          "  Run ";
       display-ssh:          "  SSH ";
     }
 
     window { 
-      x-offset: 10px;
-      y-offset: 10px;
-      location: north west;
-
-      width: 450px;
+      y-offset: -20%;
+      location: north;
+      width: 100%;
+      height: 140%;
+      padding: 45% 30% 45% 30%;
       transparency: "real";
       orientation: vertical;
-      border: 2px ;
-      border-color: #${palette.base0E};
-      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.4);
+      // border: 2px ;
+      // border-color: #${palette.base0E};
+      // border-radius: 0px;
     }
 
     mainbox {
@@ -88,7 +90,7 @@ in {
     }
 
     inputbar {
-      background-image: url("~/.config/rofi/rofi.jpg", width);
+      // background-image: url("~/.config/rofi/rofi.jpg", width);
       padding: 0 0 0;
       margin: 0 0 0 0;
     } 
@@ -109,19 +111,19 @@ in {
 
     button {
       padding:	      10px;
-      background-color: @bg;
+      // background-color: @bg;
       text-color: #${palette.base01};
       vertical-align:   0.5; 
       horizontal-align: 0.5;
     }
 
     button selected {
-      background-color: @bg;
+      // background-color: @bg;
       text-color: #${palette.base0E};
     }
 
     message {
-      background-color: @bg;
+      // background-color: @bg;
       margin: 2px;
       padding: 2px;
       border-radius: 5px;
@@ -131,7 +133,7 @@ in {
       padding: 6px;
       margin: 20px 0px 0px 20px;
       text-color: #${palette.base0F};
-      background-color: @bg;
+      // background-color: @bg;
     }
   '';
 }
