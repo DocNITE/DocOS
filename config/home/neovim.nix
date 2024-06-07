@@ -88,7 +88,8 @@ in {
 	  gopls.enable = true;
 	  jsonls.enable = true;
 	  pyright.enable = true;
-	  tailwindcss.enable = true;
+          tailwindcss.enable = true;
+          java-language-server.enable = true;
 	};
       };
       lsp-lines.enable = true;

@@ -153,7 +153,7 @@ in with lib; {
         format-plugged = "󱘖 {capacity}%";
         format-icons = [ "" "" "" "" ""]; # ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         on-click = "";
-        tooltip = false;
+        tooltip = true;
       };
     }];
     style = concatStrings [''

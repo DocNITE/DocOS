@@ -10,13 +10,14 @@ in {
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
     font-awesome spotify swayidle neovide element-desktop swaylock
-    bottom vscode krita libreoffice-qt hyprpicker
+    bottom vscode krita libreoffice-qt hyprpicker lmms
     dotnet-sdk_8 cmake clang nix-direnv wf-recorder
     qemu wineWowPackages.stable winetricks appimage-run
-    whatsapp-for-linux telegram-desktop fractal
+    whatsapp-for-linux telegram-desktop
     nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
-    hilbish zathura zsh p7zip discordo dorion android-tools
-    cataclysm-dda ani-cli aria yt-dlp ffmpeg fzf flutter
+    hilbish zathura zsh p7zip dorion android-tools
+    cataclysm-dda aria yt-dlp ffmpeg fzf flutter
+    love session-desktop
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
