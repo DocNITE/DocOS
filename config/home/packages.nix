@@ -9,13 +9,13 @@ in {
     pkgs."${browser}" discord libvirt swww grim slurp gnome.file-roller
     swaynotificationcenter rofi-wayland imv transmission-gtk mpv
     gimp obs-studio rustup audacity pavucontrol tree protonup-qt
-    font-awesome spotify swayidle neovide element-desktop swaylock
+    font-awesome swayidle neovide element-desktop swaylock
     bottom vscode krita libreoffice-qt hyprpicker lmms
-    dotnet-sdk_8 cmake clang nix-direnv wf-recorder
+    dotnet-sdk_8 cmake clang nix-direnv wf-recorder power-profiles-daemon
     qemu wineWowPackages.stable winetricks appimage-run
     whatsapp-for-linux telegram-desktop libsForQt5.plasma-browser-integration
     nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
-    hilbish zathura zsh p7zip dorion android-tools
+    hilbish zathura zsh p7zip android-tools
     cataclysm-dda aria yt-dlp ffmpeg fzf flutter
     love session-desktop
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
