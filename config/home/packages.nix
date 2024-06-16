@@ -13,7 +13,7 @@ in {
     bottom vscode krita libreoffice-qt hyprpicker lmms
     dotnet-sdk_8 cmake clang nix-direnv wf-recorder
     qemu wineWowPackages.stable winetricks appimage-run
-    whatsapp-for-linux telegram-desktop
+    whatsapp-for-linux telegram-desktop libsForQt5.plasma-browser-integration
     nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
     hilbish zathura zsh p7zip dorion android-tools
     cataclysm-dda aria yt-dlp ffmpeg fzf flutter

@@ -17,7 +17,12 @@ theKBDLayout theSecondKBDLayout; in
     wayland.enable = true;
     theme = "sugar-dark";
   };
-
+  services.desktopManager.plasma6 = {
+    enable = true;
+  };
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/ksshaskpass";
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  ];
 
   environment.systemPackages =
 let

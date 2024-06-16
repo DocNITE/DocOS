@@ -22,7 +22,7 @@
     dconf.enable = true;
     seahorse.enable=true;
     hyprland = {
-      enable = true;
+      enable = false;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       xwayland.enable = true;
     };
