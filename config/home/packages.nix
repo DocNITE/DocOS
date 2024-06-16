@@ -16,8 +16,8 @@ in {
     whatsapp-for-linux telegram-desktop
     nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
     hilbish zathura zsh p7zip dorion android-tools
-    cataclysm-dda aria yt-dlp ffmpeg fzf flutter
-    love session-desktop
+    cataclysm-dda aria yt-dlp ffmpeg fzf flutter symfony-cli
+    love session-desktop jetbrains.phpstorm postgresql
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
