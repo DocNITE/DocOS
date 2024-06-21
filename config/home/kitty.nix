@@ -10,7 +10,7 @@ in lib.mkIf (wezterm == false && alacritty == false
     enable = true;
     package = pkgs.kitty;
     font.name = "JetBrainsMono Nerd Font";
-    font.size = 12;
+    font.size = 10;
     settings = {
       scrollback_lines = 2000;
       wheel_scroll_min_lines = 1;

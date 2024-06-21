@@ -17,7 +17,7 @@ in {
     nwg-dock-hyprland whois zfxtop headset vlc nix-search-cli
     hilbish zathura zsh p7zip android-tools
     cataclysm-dda aria yt-dlp ffmpeg fzf flutter
-    love session-desktop
+    love session-desktop firefox
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
