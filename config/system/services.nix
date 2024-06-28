@@ -36,8 +36,18 @@
       auth include login
     '';
   };
-  services.power-profiles-daemon.enable = false;
+  # GAOMON s620 tablet pen resolution fix
+  services.udev.extraHwdb = ''
+  evdev:input:b0003v256Cp006F*
+    EVDEV_ABS_00=::210
+    EVDEV_ABS_01=::323
+    EVDEV_ABS_35=::210
+    EVDEV_ABS_36=::323
+  '';
   services.thermald.enable = true;
+  # Battery optimizaing is sucks - disble it!
+  services.power-profiles-daemon.enable = false;
+  # Better for RedmiBook 14 pro
   services.tlp = {
     enable = true;
     settings = {

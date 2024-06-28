@@ -78,7 +78,8 @@ in {
 	    enable = true;
 	    installRustc = true;
 	    installCargo = true;
-	  };
+          };
+          phpactor.enable = true;
 	  nixd.enable = true;
 	  html.enable = true;
           cssls.enable = true;
